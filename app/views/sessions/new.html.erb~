@@ -1,0 +1,35 @@
+<h1>Sign in</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-5">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      
+    <div>
+      <div class="row">
+	<%= f.label :email %>
+      </div>
+      <div class="row">
+	<%= f.text_field :email, class: "col-md-6" %>
+      </div>
+    </div>
+    
+    <div>
+      <div class="row">
+	<%= f.label :password %>
+      </div>
+      <div class="row">
+	<%= f.password_field :password, class: "col-md-6" %>
+      </div>
+    </div>
+    
+    <p></p>
+    <div class="row">
+      <%= f.submit "Sign in", class: "btn btn-primary col-md-offset-2" %>
+    </div>
+
+    <% end %>
+    <p></p>
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+
+  </div>
+</div>

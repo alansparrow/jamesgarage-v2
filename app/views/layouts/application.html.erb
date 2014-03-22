@@ -18,16 +18,23 @@
 	    <li><%= link_to "Home", services_path, class: "bar-menu" %></li>
 	    <li><%= link_to "Cars for sales", cars_for_sale_path, class: "bar-menu" %></li>
 	    <li><%= link_to "Contact Us", contact_path, class: "bar-menu" %></li>
-	    <!--	    <li><%= link_to "FAQ", faq_path %></li> -->
+	  <% if !signed_in? %>
+	    <li><%= link_to "", signin_path, class: "bar-menu glyphicon glyphicon-user" %></li>
 	  </ul> 
-	  <!--
-	      <section>
-		<p class="pin">We are a full service mechanic garage and have been serving the USFK community for over 30 years. Please feel free to call us for information on vehicle repairs or car sales.</p>
-	      </section> -->
+	  <% else %>
+	  </ul>
+	  <ul class="side-menu nav nav-pills nav-stacked">
+	    <li><%= link_to "Add new album", services_path, class: "bar-menu" %></li>
+	    <li><%= link_to "Edit album", cars_for_sale_path, class: "bar-menu" %></li>
+	    <li><%= link_to "Log out", signout_path, method: "delete", class: "bar-menu" %></li>
+	  </ul> 
+	  <% end %>
+	  
 	</aside>
+
 	<div class="col-md-9">
 	  <% flash.each do |key, value| %>
-	  <div class="alert alert-<%= key %>"><%= value %></div>
+	  <div class="flash-msg alert alert-<%= key %>"><%= value %></div>
 	  <% end %>
 
       	  <%= yield %>
