@@ -1,0 +1,16 @@
+<h1>Create new album</h1>
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(@album) do |f| %>
+      
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= form_tag 'create', :multipart => true do %>
+        <%= file_field_tag 'attachment' %>
+	<%= submit_tag "Send Attachment" %>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>

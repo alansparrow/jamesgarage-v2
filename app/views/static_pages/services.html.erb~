@@ -1,0 +1,13 @@
+<%= image_tag("/images/services.jpg", width: "700", height: "500",  id: "services-image") %>
+<div class="contact-us col-md-7 col-md-offset-2">
+  <div class="alert alert-warning fade in">
+    <dl class="dl-horizontal">
+
+      <dt>Our sevices</dt>
+      <dd>Car reparing</dd>
+      <dd>Used cars for sale</dd>
+      <dd>Car junking</dd>
+      <dd>Car consulting</dd>
+    </dl>
+  </div>
+</div>

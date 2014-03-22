@@ -1,0 +1,11 @@
+<h1>Edit Album <%= @album.title %></h1>
+<%= form_for(@picture, url: {action: "create"}) do |f| %>
+  <%= f.file_field :picture %>
+  <%= f.submit "Upload" %>
+<% end %>
+
+<%= form_tag("/albums", method: "get") do %>
+  <%= submit_tag("Done") %>
+<% end %>
+
+

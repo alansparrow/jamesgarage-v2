@@ -1,0 +1,165 @@
+#services-image {
+  padding-top: 60px;
+  padding-left: 60px;
+}
+.bar-menu {
+  font-size: 150%;
+}
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* typography */
+h1, h2, h3, h4, h5 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo-div {
+  float: left;
+  margin-left: 1%;
+  margin-top: 1%;
+
+} 
+
+#slogan-div {
+  display: inline-block;
+  float: left;	   
+  color: #f0f0f0;
+  margin-top: 1%;
+  margin-left: 11%;
+}
+
+
+#logo {
+  font-size: 1.7em;
+  color: #f0f0f0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* footer */
+footer {
+  padding-top: 20px;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: right;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
+
+.pin {
+	display: inline-block;
+	background: #FEFEFE;
+	border: 2px solid #FAFAFA;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	margin: 15px 2px 15px;
+	-webkit-column-break-inside: avoid;
+	-moz-column-break-inside: avoid;
+	column-break-inside: avoid;
+	padding: 15px;
+	padding-bottom: 5px;
+	background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+	opacity: 1;
+	
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+}
+
+.pin {
+ margin-left: 30px;
+}
+
+.pin img {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.pin p {
+	font: 12px/18px Arial, sans-serif;
+	color: #333;
+	margin: 0;
+}
+.album-title {
+  display: block;
+  width: 300px;
+}
+
+.album-thumbnail {
+  margin-top: 35px;
+  margin-left: 50px;
+}
+
+.side-menu {
+  margin-top: 35px;
+}
+
+.contact-us {
+  margin-top: 45px;
+  
+}
+
+#intro {
+  margin-left: 13%;
+  color: #5bc0de;
+}
+
+.albums {
+  padding-top: 1%;
+}
+

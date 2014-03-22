@@ -1,0 +1,19 @@
+<div class="albums">
+  
+  <% @albums.each do |ab| %>
+  
+  <div class="album-thumbnail col-xs-6 col-md-5">
+    <%= link_to ab, :class => "thumbnail" do %>
+    <% if ab.pictures.first %>
+    <%= image_tag(ab.pictures.first.src_link, size: "350") %>
+    <% else %>
+    <%= image_tag("/images/empty.png", size: "350") %>
+    <% end %>
+    <p class="album-title"><%= ab.title %></p>
+
+    <% end %>
+
+  </div>
+
+  <% end %>
+</div>

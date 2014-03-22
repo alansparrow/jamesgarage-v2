@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jamesgarage</title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+      <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <div class="row">
+	<aside class="col-md-3">
+	  
+	  <ul class="side-menu nav nav-pills nav-stacked">
+	    <li><%= link_to "Home", services_path, class: "bar-menu" %></li>
+	    <li><%= link_to "Cars for sales", cars_for_sale_path, class: "bar-menu" %></li>
+	    <li><%= link_to "Contact Us", contact_path, class: "bar-menu" %></li>
+<!--	    <li><%= link_to "FAQ", faq_path %></li> -->
+	  </ul> 
+	  <!--
+	      <section>
+		<p class="pin">We are a full service mechanic garage and have been serving the USFK community for over 30 years. Please feel free to call us for information on vehicle repairs or car sales.</p>
+	      </section> -->
+	</aside>
+	<div class="col-md-9">
+      	  <%= yield %>
+	</div>
+      </div>
+      <%= render 'layouts/footer' %>
+      
+    </div>
+  </body>
+</html>

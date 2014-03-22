@@ -1,0 +1,4 @@
+class ChangeDetailsOfPictures < ActiveRecord::Migration
+  def change
+  end
+end
