@@ -1,4 +1,5 @@
 Jamesgarage::Application.routes.draw do
+  get "users/new"
   get "pictures/show"
 
   resources :albums do

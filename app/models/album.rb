@@ -10,4 +10,6 @@
 
 class Album < ActiveRecord::Base
   has_many :pictures, dependent: :destroy
+  
+  validates :title, presence: true
 end
