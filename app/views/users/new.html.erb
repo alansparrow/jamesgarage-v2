@@ -1,2 +1,63 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="col-md-offset-1">
+  <h1>Sign up</h1>
+</div>
+
+<div class="row">
+  <% if @user && @user.errors.any? %>
+    <div class="row">
+    <div class="alert alert-danger col-md-5 col-md-offset-4">
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </div>
+    </div>
+    <% end %>
+  <div class="col-md-offset-5">
+    <%= form_for(@user) do |f| %>
+    
+    <div>
+      <div class="row">
+	<%= f.label :name %>    
+      </div>
+      <div class="row">
+	<%= f.text_field :name, class: "col-md-5" %>
+      </div>
+    </div>
+    
+    <div>
+      <div class="row">
+	<%= f.label :email %>    
+      </div>
+      <div class="row">
+	<%= f.text_field :email, class: "col-md-5" %>
+      </div>
+    </div>
+
+    <div>
+      <div class="row">
+	<%= f.label :password %>
+      </div>
+      <div class="row">
+	<%= f.password_field :password, class: "col-md-5" %>
+      </div>
+    </div>
+    
+    <div>
+      <div class="row">
+	<%= f.label :password_confirmation, "Confirmation" %>
+      </div>
+      <div class="row">
+	<%= f.password_field :password_confirmation, class: "col-md-5" %>
+      </div>
+    </div>
+    
+    <div>
+      <div class="row">
+	<p></p>
+	<%= f.submit "Create account", class: "btn btn-primary col-md-offset-1 col-md-3" %>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+</div>

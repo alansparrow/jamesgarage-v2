@@ -11,9 +11,6 @@
     <%= render 'layouts/header' %>
 
     <div class="container">
-      <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
       <div class="row">
 	<aside class="col-md-3">
 	  
@@ -21,7 +18,7 @@
 	    <li><%= link_to "Home", services_path, class: "bar-menu" %></li>
 	    <li><%= link_to "Cars for sales", cars_for_sale_path, class: "bar-menu" %></li>
 	    <li><%= link_to "Contact Us", contact_path, class: "bar-menu" %></li>
-<!--	    <li><%= link_to "FAQ", faq_path %></li> -->
+	    <!--	    <li><%= link_to "FAQ", faq_path %></li> -->
 	  </ul> 
 	  <!--
 	      <section>
@@ -29,11 +26,15 @@
 	      </section> -->
 	</aside>
 	<div class="col-md-9">
+	  <% flash.each do |key, value| %>
+	  <div class="alert alert-<%= key %>"><%= value %></div>
+	  <% end %>
+
       	  <%= yield %>
 	</div>
       </div>
       <%= render 'layouts/footer' %>
-      
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>
