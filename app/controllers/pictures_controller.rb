@@ -40,7 +40,15 @@ class PicturesController < ApplicationController
   def destroy
     @picture = Picture.find(params[:id])    
     album = @picture.album
-    @picture.destroy
+
+    if @picture.cover_mark
+      @picture.destroy
+      new_cover = album.pictures.first
+      new_cover.cover_mark = true
+      new_cover.save
+    else
+      @picture.destroy
+    end
 
     redirect_to edit_album_path(album)
   end
