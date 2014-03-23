@@ -1,17 +1,19 @@
+
 <div class="albums">
   
   <% @albums.each do |ab| %>
   
-  <div class="album-thumbnail col-xs-6 col-md-5">
-    <%= link_to ab, :class => "thumbnail" do %>
+  <div class="album-thumbnail thumbnail col-xs-6 col-md-5">
     <% if (cover = ab.pictures.find_by cover_mark: true) %>
     <%= image_tag(cover.src_link, size: "350") %>
     <% else %>
     <%= image_tag("/images/empty.png", size: "350") %>
     <% end %>
-    <p class="album-title"><%= ab.title %></p>
+    <div><p class="album-title"><%= ab.title %></p></div>
+    <div>
+      <%= link_to 'delete album', album_path(id: ab.id), method: 'delete' %>
+    </div>
 
-    <% end %>
 
   </div>
 

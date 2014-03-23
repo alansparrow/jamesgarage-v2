@@ -10,11 +10,16 @@ Jamesgarage::Application.routes.draw do
   get "users/new"
   get "pictures/show"
 
+  match '/albums/edit', to: 'albums#edit_all', as: 'album_edit_all', via: 'get'
+  match '/albums/:id/change_title', to: 'albums#change_title', as: 'change_album_title', via: 'get'
   resources :albums do
     resources :pictures
   end
 
+  # match reverse, 'picture_delete_path(id)' and 'pictures#destroy' combine to make new path for
+  # ':controller/:action/:id'
   match ':controller/:action/:id', to: 'pictures#destroy', as: 'picture_delete', via: 'delete'
+  match ':controller/:action/:id', to: 'pictures#update_cover', as: 'picture_cover', via: 'put'
   
   get "cars_for_sale" => "albums#index"
   get "services" => "static_pages#services"

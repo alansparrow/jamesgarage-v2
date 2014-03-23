@@ -1,0 +1,14 @@
+<%= form_for(@album, :html => {:multipart => true}) do |f| %>
+
+<div class="row">
+  <%= f.label "Album Title" %>
+</div>
+<div class="row">
+  <%= f.text_field :title, class: "form-control" %>
+</div>
+<p></p>
+<div class="row">
+  <%= f.submit "Change title", class: "btn btn-success col-md-offset-4" %>
+</div>
+
+<% end %>

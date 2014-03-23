@@ -1,0 +1,25 @@
+
+<div class="albums">
+  
+  <% @albums.each do |ab| %>
+  
+  <div class="album-thumbnail thumbnail col-xs-6 col-md-5">
+    <% if (cover = ab.pictures.find_by cover_mark: true) %>
+    <%= image_tag(cover.src_link, size: "350") %>
+    <% else %>
+    <%= image_tag("/images/empty.png", size: "350") %>
+    <% end %>
+    <div><p class="album-title"><%= ab.title %></p></div>
+    <div>
+      <%= link_to 'delete', album_path(id: ab.id), method: 'delete', data: { confirm: "Are you sure?" } %> | 
+      <%= link_to 'edit', edit_album_path(id: ab.id) %> | 
+      <%= link_to 'add photo', new_album_picture_path(ab) %> | 
+      <%= link_to 'change title', change_album_title_path(id: ab.id) %>
+
+    </div>
+
+
+  </div>
+
+  <% end %>
+</div>

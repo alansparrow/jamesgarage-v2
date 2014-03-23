@@ -7,6 +7,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  src_link   :string(255)
+#  cover_mark :boolean
 #
 
 require 'spec_helper'

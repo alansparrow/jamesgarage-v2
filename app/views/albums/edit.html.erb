@@ -1,9 +1,16 @@
 <div class="albums">
-  <h2><%= @album.title %></h2>
+  <h2>Editing: <%= @album.title %></h2>
   <% @album.pictures.each do |p| %>
   <div class="album-thumbnail thumbnail col-xs-6 col-md-5">
     <%= link_to image_tag(p.src_link, size: "350"), "/images/" + p.src_link, class: "fancybox", rel: "fancybox" %>
-    <p><%= link_to 'delete', picture_delete_path(id: p.id), method: 'delete' %></p>
+    <span><%= link_to 'delete', picture_delete_path(id: p.id), method: 'delete', data: { confirm: "Are you sure?" } %> | 
+      <% if p.cover_mark %>
+      <p class="label label-danger">Album cover</p>
+      <% else %>
+      <%= link_to 'set album cover', picture_cover_path(id: p.id), method: 'put' %>
+      <% end %>
+    </span>
+
   </div>
   
   <% end %>

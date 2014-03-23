@@ -1,0 +1,4 @@
+class AddCoverMarkToPictures < ActiveRecord::Migration
+  def change
+  end
+end

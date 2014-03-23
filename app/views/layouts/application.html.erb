@@ -18,15 +18,16 @@
 	    <li><%= link_to "Home", services_path, class: "bar-menu" %></li>
 	    <li><%= link_to "Cars for sales", cars_for_sale_path, class: "bar-menu" %></li>
 	    <li><%= link_to "Contact Us", contact_path, class: "bar-menu" %></li>
-	  <% if !signed_in? %>
+	  <% if !admin? %>
 	    <li><%= link_to "", signin_path, class: "bar-menu glyphicon glyphicon-user" %></li>
 	  </ul> 
 	  <% else %>
 	  </ul>
 	  <ul class="side-menu nav nav-pills nav-stacked">
-	    <li><%= link_to "Add new album", services_path, class: "bar-menu" %></li>
-	    <li><%= link_to "Edit album", cars_for_sale_path, class: "bar-menu" %></li>
-	    <li><%= link_to "Log out", signout_path, method: "delete", class: "bar-menu" %></li>
+	    <li><%= link_to "Welcome, admin", '#', class: "label label-warning bar-menu" %></li>
+	    <li><%= link_to "Add new album", new_album_path %></li>
+	    <li><%= link_to "Edit albums", album_edit_all_path %></li>
+	    <li><%= link_to "Log out", signout_path, method: "delete" %></li>
 	  </ul> 
 	  <% end %>
 	  
